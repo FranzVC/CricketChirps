@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Cricket Chirps</string>
+    <string name="label_tittle">Chirps number</string>
+    <string name="radioBtn_fahrenheit">Fahrenheit</string>
+    <string name="radioBtn_celsius">Celsius</string>
+    <string name="nullValue"> </string>
+</resources>
