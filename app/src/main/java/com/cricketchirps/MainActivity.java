@@ -22,17 +22,16 @@ public class MainActivity extends AppCompatActivity {
         final RadioButton radioBtn_celsius = findViewById(R.id.radioBtn_celsius);
         final RadioButton radioBtn_fahrenheit = findViewById(R.id.radioBtn_fahrenheit);
         final TextView textView_temperature = findViewById(R.id.textView_temperature);
-        final EditText txtBx_data =findViewById(R.id.txtBx_data);
-        final Toast toast_fahrenheit = Toast.makeText(getApplicationContext(),"Count the number of chirps in 14 seconds",Toast.LENGTH_SHORT);
-        final Toast toast_celcious = Toast.makeText(getApplicationContext(),"Count the number of chirps in 25 seconds",Toast.LENGTH_SHORT);
+        final EditText txtBx_data = findViewById(R.id.txtBx_data);
+        final Toast toast_fahrenheit = Toast.makeText(getApplicationContext(), R.string.toast_fahrenheitMessage, Toast.LENGTH_SHORT);
+        final Toast toast_celsius = Toast.makeText(getApplicationContext(), R.string.toast_celsiusMessage, Toast.LENGTH_SHORT);
 
         radioBtn_celsius.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 radioBtn_fahrenheit.setChecked(false);
-
-                toast_celcious.setGravity(Gravity.TOP,0,155);
-                toast_celcious.show();
+                toast_celsius.setGravity(Gravity.TOP, 0, 155);
+                toast_celsius.show();
             }
         });
 
@@ -40,8 +39,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 radioBtn_celsius.setChecked(false);
-
-                toast_fahrenheit.setGravity(Gravity.TOP,0,155);
+                toast_fahrenheit.setGravity(Gravity.TOP, 0, 155);
                 toast_fahrenheit.show();
             }
         });
@@ -49,22 +47,17 @@ public class MainActivity extends AppCompatActivity {
         button_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Integer chirpsNumber = Integer.parseInt(txtBx_data.getText().toString());
-
-                //if(txtBx_data.val) {
+                int chirpsNumber = Integer.parseInt(txtBx_data.getText().toString());
+                String temperature;
                 if (radioBtn_celsius.isChecked()) {
                     chirpsNumber = (chirpsNumber / 3) + 4;
-                    textView_temperature.setText(chirpsNumber + "°C");
+                    temperature = chirpsNumber + "°C";
+                    textView_temperature.setText(temperature);
                 } else {
                     chirpsNumber = chirpsNumber + 40;
-                    textView_temperature.setText(chirpsNumber + "°F");
+                    temperature = chirpsNumber + "°F";
+                    textView_temperature.setText(temperature);
                 }
-                /*}
-                else{
-                    Toast toast = Toast.makeText(getApplicationContext(),"invalid value",Toast.LENGTH_SHORT);
-                    toast.setGravity(Gravity.CENTER,0,0);
-                    toast.show();
-                }*/
             }
         });
     }

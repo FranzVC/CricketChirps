@@ -4,4 +4,6 @@
     <string name="radioBtn_fahrenheit">Fahrenheit</string>
     <string name="radioBtn_celsius">Celsius</string>
     <string name="nullValue"> </string>
+    <string name="toast_celsiusMessage">Count the number of chirps in 25 seconds</string>
+    <string name="toast_fahrenheitMessage">Count the number of chirps in 14 seconds</string>
 </resources>
